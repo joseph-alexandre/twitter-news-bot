@@ -1,18 +1,13 @@
 const puppeter = require('puppeteer');
 
 
-
-const getBrowser = async () => {
+const getBrowser = () => {
     return puppeter.launch({
         headless: false
-    }).then(browser => {
-        return browser
-    }).catch(error => {
-        console.log(error);
     });
 }
 
-const getPage = async () => {
+const getNewPage = async () => {
     return getBrowser().then(browser => {
         return browser.newPage();
     }).catch(error => {
@@ -26,6 +21,16 @@ const goTo = async (url) => {
     });
 }
 
+const getFirstPage = async () => {
+    try {
+        const browser = await getBrowser();
+        const pages = await browser.pages();
+        return pages[0];
+    } catch(error){
+        console.log(error);
+    }
+}
+
 module.exports = {
-    getBrowser, getPage, goTo
+    getBrowser, getNewPage, goTo, getFirstPage
 };

@@ -1,3 +1,6 @@
+/*
+* Mapeamento do Banco de Dados no Sequelize.
+*/
 module.exports = {
   development: {
     dialect: 'sqlite',

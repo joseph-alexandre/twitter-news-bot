@@ -1,5 +1,8 @@
 'use strict';
-
+/**
+ * Criação da tabela no banco de dados. O 'up' é a construção da tabela e seus atributos, enquanto o 'down' é quando ocorre algum erro e é necessário
+ * dar um rollback. 
+ */
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     return queryInterface.createTable('news', {

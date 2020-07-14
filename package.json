@@ -6,6 +6,7 @@
   "author": "Joseph Alexandre <j.alexandremmfreitas@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "jsdom": "^16.3.0",
     "puppeteer": "^5.0.0",
     "sequelize": "^6.3.1",
     "sequelize-cli": "^6.2.0",
